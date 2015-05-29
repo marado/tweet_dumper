@@ -2,9 +2,18 @@
 # encoding: utf-8
 
 import sys
-import tweepy #https://github.com/tweepy/tweepy
-import csv
+try:
+	import tweepy #https://github.com/tweepy/tweepy
+except ImportError:
+	print "You'll need tweepy instaled on your system."
+	sys.exit()
+try:
+	import csv
+except ImportError:
+	print "You'll need the python csv module instaled on your system."
+	sys.exit()
 
+# EDIT THIS!
 #Twitter API credentials
 consumer_key = ""
 consumer_secret = ""
