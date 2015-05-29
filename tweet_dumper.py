@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
+import sys
 import tweepy #https://github.com/tweepy/tweepy
 import csv
 
@@ -12,6 +13,11 @@ access_secret = ""
 
 
 def get_all_tweets(screen_name):
+
+	if (consumer_key == ""):
+		print "You need to set up the script first. Edit it and add your keys."
+		return
+
 	#Twitter only allows access to a users most recent 3240 tweets with this method
 	
 	#authorize twitter, initialize tweepy
@@ -59,5 +65,7 @@ def get_all_tweets(screen_name):
 
 
 if __name__ == '__main__':
-	#pass in the username of the account you want to download
-	get_all_tweets("J_tsar")
+	if (len(sys.argv) == 2):
+		get_all_tweets(sys.argv[1])
+	else:
+	    print "Please add the twitter account you want to back up as an argument."
