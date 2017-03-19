@@ -14,7 +14,7 @@ except ImportError:
 	sys.exit()
 
 # EDIT THIS!
-#Twitter API credentials
+#Twitter API credentials - https://apps.twitter.com/
 consumer_key = ""
 consumer_secret = ""
 access_key = ""
